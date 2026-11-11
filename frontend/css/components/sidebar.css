@@ -1,0 +1,334 @@
+/* =====================================
+   NEXORYNTH — HYBRID SIDEBAR
+   Deep Space / Dark Cosmic
+===================================== */
+
+
+/* 1. Sidebar Structure */
+
+.sidebar {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 260px;
+    min-width: 260px;
+    min-height: 100vh;
+
+    padding: 24px 16px;
+
+    background: var(--color-surface);
+
+    border-right: 1px solid var(--color-border);
+
+    transition:
+        width var(--transition-normal),
+        min-width var(--transition-normal);
+}
+
+
+/* 2. Sidebar Header */
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 42px;
+    margin-bottom: 40px;
+}
+
+
+/* Logo */
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--color-text-primary);
+
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+.logo-icon {
+    color: var(--color-primary);
+    font-size: 25px;
+}
+
+.logo-text {
+    transition: opacity var(--transition-fast);
+}
+
+
+/* Toggle Button */
+
+.sidebar-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    background: transparent;
+    color: var(--color-text-muted);
+
+    font-size: 17px;
+
+    transition: var(--transition-fast);
+}
+
+.sidebar-toggle:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background: rgba(179, 74, 203, 0.08);
+}
+
+
+/* 3. Navigation */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    flex: 1;
+}
+
+
+/* Section Labels */
+
+.nav-section-label {
+    margin: 15px 0 8px 12px;
+
+    color: var(--color-text-dim);
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+
+/* Navigation Items */
+
+.nav-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    min-height: 46px;
+    padding: 0 13px;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+
+    color: var(--color-text-muted);
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    transition: var(--transition-fast);
+}
+
+
+/* Navigation Icons */
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    min-width: 22px;
+
+    font-size: 19px;
+}
+
+
+/* Hover */
+
+.nav-item:hover {
+    color: var(--color-text-primary);
+
+    background: rgba(179, 74, 203, 0.07);
+}
+
+
+/* Active Item */
+
+.nav-item.active {
+    color: var(--color-primary-light);
+
+    background: rgba(179, 74, 203, 0.12);
+
+    border-color: rgba(179, 74, 203, 0.18);
+}
+
+.nav-item.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: -17px;
+
+    width: 3px;
+    height: 23px;
+
+    border-radius: var(--radius-full);
+
+    background: var(--color-primary);
+
+    box-shadow: var(--glow-primary);
+}
+
+
+/* 4. Sidebar Footer */
+
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 16px 8px 5px;
+
+    border-top: 1px solid var(--color-border);
+
+    overflow: hidden;
+}
+
+
+.sidebar-user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: var(--gradient-primary);
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.sidebar-user-info {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    white-space: nowrap;
+}
+
+.user-name {
+    color: var(--color-text-primary);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.user-role {
+    color: var(--color-text-muted);
+    font-size: 10px;
+}
+
+
+/* 5. Collapsed State */
+
+.dashboard.sidebar-collapsed .sidebar {
+    width: 78px;
+    min-width: 78px;
+
+    padding: 24px 12px;
+}
+
+.dashboard.sidebar-collapsed .sidebar-header {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard.sidebar-collapsed .sidebar-logo {
+    justify-content: center;
+}
+
+.dashboard.sidebar-collapsed .logo-text,
+.dashboard.sidebar-collapsed .nav-label,
+.dashboard.sidebar-collapsed .nav-section-label,
+.dashboard.sidebar-collapsed .sidebar-user-info {
+    display: none;
+}
+
+.dashboard.sidebar-collapsed .sidebar-toggle {
+    transform: rotate(180deg);
+}
+
+.dashboard.sidebar-collapsed .nav-item {
+    justify-content: center;
+    padding: 0;
+}
+
+.dashboard.sidebar-collapsed .nav-item.active::before {
+    left: -13px;
+}
+
+.dashboard.sidebar-collapsed .sidebar-footer {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* 6. Responsive */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 78px;
+        min-width: 78px;
+        padding: 20px 12px;
+    }
+
+    .sidebar-logo {
+        justify-content: center;
+    }
+
+    .logo-text,
+    .nav-label,
+    .nav-section-label,
+    .sidebar-user-info {
+        display: none;
+    }
+
+    .nav-item {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .sidebar-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sidebar-footer {
+        justify-content: center;
+    }
+
+}

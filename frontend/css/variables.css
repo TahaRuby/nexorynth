@@ -1,0 +1,92 @@
+
+/* =====================================
+   NEXORYNTH — DESIGN SYSTEM
+   Theme: Deep Space / Dark Cosmic
+===================================== */
+
+:root {
+
+    /* 1. Background Colors */
+
+    --color-bg: #080911;
+    --color-surface: #10111D;
+    --color-surface-alt: #151020;
+
+    /* 2. Brand Colors */
+
+    --color-primary: #B34ACB;
+    --color-primary-dark: #76258E;
+    --color-primary-light: #D18AE0;
+
+    --color-secondary: #267F89;
+
+    /* 3. Text Colors */
+
+    --color-text-primary: #F1EFF7;
+    --color-text-secondary: #C5C1D4;
+    --color-text-muted: #9995AE;
+    --color-text-dim: #666477;
+
+    /* 4. Borders */
+
+    --color-border: #252337;
+    --color-border-soft: rgba(255, 255, 255, 0.04);
+
+    /* 5. Gradients */
+
+    --gradient-primary: linear-gradient(
+        100deg,
+        #76258E,
+        #9135A8
+    );
+
+    --gradient-background: linear-gradient(
+        135deg,
+        #080911,
+        #10111D 65%,
+        #151020
+    );
+
+    /* 6. Typography */
+
+    --font-primary: Arial, sans-serif;
+
+    --font-size-xs: 10px;
+    --font-size-sm: 12px;
+    --font-size-md: 14px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 34px;
+
+    /* 7. Spacing */
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+
+    /* 8. Border Radius */
+
+    --radius-sm: 6px;
+    --radius-md: 9px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+    --radius-full: 999px;
+
+    /* 9. Effects */
+
+    --shadow-primary: 0 8px 25px rgba(118, 37, 142, 0.2);
+
+    --glow-primary: 0 0 20px rgba(179, 74, 203, 0.15);
+
+    --glow-secondary: 0 0 10px rgba(38, 127, 137, 0.7);
+
+    /* 10. Transitions */
+
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.25s ease;
+    --transition-slow: 0.4s ease;
+
+}

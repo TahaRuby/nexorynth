@@ -1,0 +1,522 @@
+
+/* =====================================
+   NEXORYNTH — AUTHENTICATION DESIGN
+   Theme: Deep Space / Dark Cosmic
+===================================== */
+
+/* 1. Global Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #080911;
+    color: #F1EFF7;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* 2. Main Layout */
+
+.auth-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* 3. Brand Section */
+
+.brand-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 100vh;
+    padding: 55px 65px;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 35%,
+            rgba(118, 37, 142, 0.19),
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse at 85% 80%,
+            rgba(38, 127, 137, 0.07),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #080911,
+            #10111D 65%,
+            #151020
+        );
+
+    border-right: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Subtle cosmic glow */
+
+.brand-section::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    width: 380px;
+    height: 380px;
+
+    top: 25%;
+    left: 10%;
+
+    background: rgba(179, 74, 203, 0.08);
+    filter: blur(110px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+
+/* 4. Logo */
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #F1EFF7;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    text-decoration: none;
+}
+
+.brand-icon {
+    color: #B34ACB;
+    font-size: 30px;
+}
+
+
+/* 5. Brand Content */
+
+.brand-content {
+    position: relative;
+    max-width: 500px;
+}
+
+.eyebrow {
+    color: #267F89;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.brand-content h1 {
+    margin: 25px 0;
+
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+.brand-content h1 span {
+    display: block;
+    color: #B34ACB;
+}
+
+.brand-content p {
+    max-width: 390px;
+
+    color: #9995AE;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.brand-footer {
+    color: #666477;
+    font-size: 11px;
+}
+
+
+/* 6. Form Section */
+
+.form-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    padding: 50px;
+
+    background: #080911;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 410px;
+}
+
+
+/* 7. Form Heading */
+
+.form-heading {
+    margin-bottom: 42px;
+}
+
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #267F89;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+    background: #267F89;
+
+    box-shadow: 0 0 10px rgba(38,127,137,0.7);
+}
+
+.form-heading h2 {
+    margin: 24px 0 10px;
+
+    color: #F1EFF7;
+    font-size: 34px;
+    letter-spacing: -1px;
+}
+
+.form-heading p {
+    color: #9995AE;
+    font-size: 14px;
+}
+
+
+/* 8. Input Fields */
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 11px;
+
+    color: #C5C1D4;
+    font-size: 13px;
+}
+
+.input-group input {
+    display: block;
+    width: 100%;
+    height: 52px;
+
+    padding: 0 16px;
+
+    border: 1px solid #252337;
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #10111D;
+    color: #F1EFF7;
+
+    font-size: 13px;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.input-group input::placeholder {
+    color: #666477;
+}
+
+.input-group input:focus {
+    border-color: #76258E;
+    box-shadow: 0 0 0 3px rgba(118,37,142,0.12);
+}
+
+
+/* 9. Password */
+
+.password-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.forgot-link {
+    color: #A94CBD;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    color: #D18AE0;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 75px;
+}
+
+.password-wrapper button {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: #267F89;
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+/* 10. Remember Me */
+
+.form-options {
+    margin: 5px 0 27px;
+}
+
+.remember-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #9995AE;
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.remember-option input {
+    accent-color: #A33BB5;
+}
+
+
+/* 11. Login Button */
+
+.login-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 53px;
+
+    padding: 0 19px;
+
+    border: 1px solid rgba(179,74,203,0.2);
+    border-radius: 9px;
+
+    background: linear-gradient(
+        100deg,
+        #76258E,
+        #9135A8
+    );
+
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.login-button:hover {
+    background: linear-gradient(
+        100deg,
+        #8D2CA5,
+        #B34ACB
+    );
+
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(118,37,142,0.2);
+}
+
+
+/* 12. Register */
+
+.register-text {
+    margin-top: 30px;
+
+    color: #858198;
+    font-size: 13px;
+    text-align: center;
+}
+
+.register-text a {
+    color: #B34ACB;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-text a:hover {
+    color: #D18AE0;
+}
+
+
+/* 13. Footer */
+
+.form-bottom {
+    margin-top: 55px;
+
+    color: #565368;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+
+/* 14. Responsive Design */
+
+@media (max-width: 850px) {
+
+    .auth-container {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-section {
+        min-height: 330px;
+        padding: 35px;
+    }
+
+    .brand-content h1 {
+        font-size: 44px;
+    }
+
+    .brand-footer {
+        margin-top: 35px;
+    }
+
+    .form-section {
+        min-height: 550px;
+        padding: 55px 30px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .brand-section {
+        min-height: 290px;
+        padding: 25px;
+    }
+
+    .brand-content h1 {
+        font-size: 36px;
+    }
+
+    .form-section {
+        padding: 45px 24px;
+    }
+
+    .form-heading h2 {
+        font-size: 29px;
+    }
+
+}
+
+/* =====================================
+   REGISTER PAGE
+===================================== */
+
+.register-wrapper {
+    max-width: 410px;
+}
+
+.register-wrapper .form-heading {
+    margin-bottom: 30px;
+}
+
+.register-wrapper .input-group {
+    margin-bottom: 19px;
+}
+
+.register-wrapper .input-group input {
+    height: 48px;
+}
+
+/* Password toggle */
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: #267F89;
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.password-wrapper input {
+    padding-right: 75px;
+}
+
+/* Terms and Conditions */
+
+.terms-link {
+    color: #B34ACB;
+    text-decoration: none;
+}
+
+.terms-link:hover {
+    color: #D18AE0;
+}
+
+/* Register form spacing */
+
+.register-wrapper .form-options {
+    margin: 8px 0 24px;
+}
+
+.register-wrapper .register-text {
+    margin-top: 25px;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+
+    .register-wrapper {
+        max-width: 450px;
+    }
+
+    .register-wrapper .form-heading {
+        margin-bottom: 28px;
+    }
+
+}

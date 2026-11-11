@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Nexorynth</title>
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/pages/auth.css">
+
+</head>
+
+<body>
+
+    <main class="auth-container">
+
+        <!-- Brand Section -->
+        <section class="brand-section">
+
+            <a href="../index.html" class="brand-logo">
+                <span class="brand-icon">✦</span>
+                <span>NEXORYNTH</span>
+            </a>
+
+            <div class="brand-content">
+
+                <span class="eyebrow">YOUR OWN UNIVERSE</span>
+
+                <h1>
+                    Explore Beyond
+                    <span>Limits.</span>
+                </h1>
+
+                <p>
+                    One universe. Multiple possibilities.
+                    Your tools, projects and ideas in one place.
+                </p>
+
+            </div>
+
+            <div class="brand-footer">
+                © 2026 Nexorynth. All rights reserved.
+            </div>
+
+        </section>
+
+
+        <!-- Login Form -->
+        <section class="form-section">
+
+            <div class="form-wrapper">
+
+                <div class="form-heading">
+
+                    <span class="status-indicator">
+                        <span class="status-dot"></span>
+                        SYSTEM ONLINE
+                    </span>
+
+                    <h2>Welcome Back</h2>
+
+                    <p>Sign in to continue your journey.</p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <div class="password-label">
+                            <label for="password">Password</label>
+
+                            <a href="#" class="forgot-link">
+                                Forgot password?
+                            </a>
+                        </div>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-options">
+
+                        <label class="remember-option">
+                            <input type="checkbox" id="remember">
+                            <span>Remember me</span>
+                        </label>
+
+                    </div>
+
+
+                    <button type="submit" class="login-button">
+                        <span>Sign In</span>
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+
+                <p class="register-text">
+                    Don't have an account?
+                    <a href="register.html">Create account</a>
+                </p>
+
+
+                <div class="form-bottom">
+                    SECURE ACCESS · NEXORYNTH NETWORK
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../js/auth.js"></script>
+
+</body>
+</html>
